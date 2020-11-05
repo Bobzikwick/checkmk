@@ -122,8 +122,6 @@ fi
 
 # Filesystem usage for ZFS
 if type zfs > /dev/null 2>&1 ; then
-#sysctl vfs.zfs.version.zpl
-#if [ ! $? ]; then
 if [ "$(sysctl -qn vfs.zfs.version.zpl)" ]; then
     echo '<<<zfsget>>>'
     zfs get -t filesystem,volume -Hp name,quota,used,avail,mountpoint,type || \
@@ -305,8 +303,6 @@ then
 fi
 
 # check zpool status
-#sysctl vfs.zfs.version.zpl
-#if [ ! $? ]; then
 if [ "$(sysctl -qn vfs.zfs.version.zpl)" ]; then
    if [ -x /sbin/zpool ]; then
       echo "<<<zpool_status>>>"
