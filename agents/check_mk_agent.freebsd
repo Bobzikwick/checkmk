@@ -122,6 +122,7 @@ fi
 
 # Filesystem usage for ZFS
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 if type zfs > /dev/null 2>&1 ; then
 <<<<<<< HEAD
@@ -130,6 +131,8 @@ if type zfs > /dev/null 2>&1 ; then
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 24e7a0da68 (Check zfs is in use before using zfs commands.)
+=======
+>>>>>>> b320e410d5 (Remove left over line, that should have been removed earlier.)
 if [ "$(sysctl -qn vfs.zfs.version.zpl)" ]; then
 =======
 sysctl vfs.zfs.version.zpl
