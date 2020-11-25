@@ -342,6 +342,7 @@ fi
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 if [ "$(sysctl -qn vfs.zfs.version.zpl)" -a -x /sbin/zpool ]; then
    echo "<<<zpool_status>>>"
    /sbin/zpool status -x | grep -v "errors: No known data errors"
@@ -383,6 +384,11 @@ if [ ! $? ]; then
 >>>>>>> 96c5124da6 (Check zfs is in use before using zfs commands.)
 =======
 >>>>>>> 8f5653271b (Check zfs is in use before using zfs commands.)
+=======
+if [ "$(sysctl -qn vfs.zfs.version.zpl)" -a -x /sbin/zpool ]; then
+    echo "<<<zpool_status>>>"
+    /sbin/zpool status -x | grep -v "errors: No known data errors"
+>>>>>>> cc061323ee (Simplify the test for zpool_status)
 fi
 
 
