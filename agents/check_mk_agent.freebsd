@@ -303,8 +303,8 @@ fi
 
 # check zpool status
 if [ "$(sysctl -qn vfs.zfs.version.zpl)" -a -x /sbin/zpool ]; then
-    echo "<<<zpool_status>>>"
-    /sbin/zpool status -x | grep -v "errors: No known data errors"
+   echo "<<<zpool_status>>>"
+   /sbin/zpool status -x | grep -v "errors: No known data errors"
 fi
 
 
