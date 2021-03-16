@@ -121,41 +121,7 @@ else
 fi
 
 # Filesystem usage for ZFS
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-if type zfs > /dev/null 2>&1 ; then
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 24e7a0da68 (Check zfs is in use before using zfs commands.)
-=======
->>>>>>> b320e410d5 (Remove left over line, that should have been removed earlier.)
 if [ "$(sysctl -qn vfs.zfs.version.zpl)" ]; then
-=======
-sysctl vfs.zfs.version.zpl
-if [ ! $? ]; then
->>>>>>> a534c3b529 (Check zfs is in use before using zfs commands.)
-=======
-#sysctl vfs.zfs.version.zpl
-#if [ ! $? ]; then
-if [ "$(sysctl -qn vfs.zfs.version.zpl)" ]; then
->>>>>>> 9083bd087c (Try the zfs check a 'nicer' way.)
-=======
-sysctl vfs.zfs.version.zpl
-if [ ! $? ]; then
->>>>>>> 96c5124da6 (Check zfs is in use before using zfs commands.)
-=======
-#sysctl vfs.zfs.version.zpl
-#if [ ! $? ]; then
-if [ "$(sysctl -qn vfs.zfs.version.zpl)" ]; then
->>>>>>> f0a97fd992 (Try the zfs check a 'nicer' way.)
-=======
-sysctl vfs.zfs.version.zpl
-if [ ! $? ]; then
->>>>>>> 8f5653271b (Check zfs is in use before using zfs commands.)
     echo '<<<zfsget>>>'
     zfs get -t filesystem,volume -Hp name,quota,used,avail,mountpoint,type || \
        zfs get -Hp name,quota,used,avail,mountpoint,type
@@ -336,64 +302,12 @@ then
 fi
 
 # check zpool status
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 if [ "$(sysctl -qn vfs.zfs.version.zpl)" -a -x /sbin/zpool ]; then
    echo "<<<zpool_status>>>"
    /sbin/zpool status -x | grep -v "errors: No known data errors"
-=======
-if [ "$(sysctl -qn vfs.zfs.version.zpl)" ]; then
-=======
-sysctl vfs.zfs.version.zpl
-if [ ! $? ]; then
->>>>>>> a534c3b529 (Check zfs is in use before using zfs commands.)
-=======
-#sysctl vfs.zfs.version.zpl
-#if [ ! $? ]; then
-if [ "$(sysctl -qn vfs.zfs.version.zpl)" ]; then
->>>>>>> 9083bd087c (Try the zfs check a 'nicer' way.)
-=======
-sysctl vfs.zfs.version.zpl
-if [ ! $? ]; then
->>>>>>> 96c5124da6 (Check zfs is in use before using zfs commands.)
-=======
-#sysctl vfs.zfs.version.zpl
-#if [ ! $? ]; then
-if [ "$(sysctl -qn vfs.zfs.version.zpl)" ]; then
->>>>>>> f0a97fd992 (Try the zfs check a 'nicer' way.)
-=======
-sysctl vfs.zfs.version.zpl
-if [ ! $? ]; then
->>>>>>> 8f5653271b (Check zfs is in use before using zfs commands.)
-   if [ -x /sbin/zpool ]; then
       echo "<<<zpool_status>>>"
       /sbin/zpool status -x | grep -v "errors: No known data errors"
    fi
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 24e7a0da68 (Check zfs is in use before using zfs commands.)
-=======
->>>>>>> a534c3b529 (Check zfs is in use before using zfs commands.)
-=======
->>>>>>> 96c5124da6 (Check zfs is in use before using zfs commands.)
-=======
->>>>>>> 8f5653271b (Check zfs is in use before using zfs commands.)
-=======
-if [ "$(sysctl -qn vfs.zfs.version.zpl)" -a -x /sbin/zpool ]; then
-<<<<<<< HEAD
-    echo "<<<zpool_status>>>"
-    /sbin/zpool status -x | grep -v "errors: No known data errors"
->>>>>>> cc061323ee (Simplify the test for zpool_status)
-=======
-   echo "<<<zpool_status>>>"
-   /sbin/zpool status -x | grep -v "errors: No known data errors"
->>>>>>> 49073d6369 (Reduce whitespace changes)
 fi
 
 
